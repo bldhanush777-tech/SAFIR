@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #020205;
+  --starlight: #f8fafc;
+  --nebula: #94a3b8;
+  --ion-cyan: #00f0ff;
+  --antimatter-violet: #8b5cf6;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glow-line: rgba(0, 240, 255, 0.15);
+  --glass: rgba(0, 0, 0, 0.4);
+  --glow-line: rgba(0, 240, 255, 0.2);
+  
+  --safe: #00eaa6;
+  --marginal: #fbbf24;
+  --danger: #ff0055;
+
+  /* Legacy mappings */
+  --ink: #020205;
+  --paper: #f8fafc;
+  --mute: #94a3b8;
+  --ember: #00f0ff;
+  --amber: #8b5cf6;
+  --line: rgba(0, 240, 255, 0.15);
+  --line: rgba(0, 240, 255, 0.2);
+
+  color-scheme: dark;
+}
+
+@keyframes voidShift {
+  0%, 100% {
+    background-position: 90% 10%, 10% 90%;
+  }
+  50% {
+    background-position: 70% 30%, 30% 70%;
+  }
+}
+
+body {
+  background-color: var(--void);
+  background-image: 
+    radial-gradient(circle at 85% 15%, rgba(10, 15, 26, 0.85), transparent 55%),
+    radial-gradient(circle at 15% 80%, rgba(139, 92, 246, 0.04), transparent 50%);
+    radial-gradient(circle at 15% 80%, rgba(139, 92, 246, 0.05), transparent 50%);
+  background-attachment: fixed;
+  background-size: 100% 100%, 100% 100%;
+  animation: voidShift 24s ease-in-out infinite;
+  color: var(--starlight);
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Technical Headings in JetBrains Mono */
+h1, .font-telemetry-h1 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(40px, 8vw, 96px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+h2, .font-telemetry-h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 1.1;
+/* Headings in Space Grotesk */
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  font-weight: 600;
+}
+
+h3, .font-telemetry-h3 {
+/* Telemetry & Numerical Data in JetBrains Mono */
+.font-telemetry, .font-mono, .telemetry-readout {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(20px, 3vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+/* Section Header HUD Micro-labels */
+.section-header-hud {
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nebula);
+}
+
+/* Anti-Gravity Holographic Panels */
+/* Anti-Gravity Holographic Bento Panels */
+.anti-gravity-panel {
+  background: var(--glass);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glow-line);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.06);
+  transition: border-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anti-gravity-panel:hover {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.12);
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.14);
+}
+
+/* Continuous Subtle Levitation */
+/* Continuous Subtle Levitation (@keyframes levitate) */
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.levitate-float {
+  animation: levitate 6s ease-in-out infinite;
+}
+
+.levitate-delay-1 {
+  animation: levitate 6s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.levitate-delay-2 {
+  animation: levitate 6s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+
+.levitate-delay-3 {
+  animation: levitate 6s ease-in-out infinite;
+  animation-delay: 3.6s;
+}
+
+/* Glowing Telemetry Readouts */
+.telemetry-readout {
+  font-family: 'JetBrains Mono', monospace;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+}
+
+/* Antigravity 1px Glowing Track Slider with Halo Thumb */
+/* 1px Glowing Track Slider with Halo Thumb */
+input[type="range"].slider-holo {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #00f0ff 0%, #8b5cf6 100%);
+  outline: none;
+  margin: 16px 0;
+  margin: 14px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+@keyframes haloPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.2), 0 0 12px rgba(0, 240, 255, 0.6);
+    box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.2), 0 0 10px rgba(0, 240, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(139, 92, 246, 0.35), 0 0 20px rgba(0, 240, 255, 0.8);
+    box-shadow: 0 0 0 9px rgba(139, 92, 246, 0.35), 0 0 18px rgba(0, 240, 255, 0.85);
+  }
+}
+
+input[type="range"].slider-holo::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00f0ff;
+  border: 2px solid #f8fafc;
+  box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.25), 0 0 12px rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.25), 0 0 12px rgba(0, 240, 255, 0.6);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: haloPulse 3s ease-in-out infinite;
+}
+
+input[type="range"].slider-holo::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 8px rgba(139, 92, 246, 0.4), 0 0 18px rgba(0, 240, 255, 0.9);
+  box-shadow: 0 0 0 7px rgba(139, 92, 246, 0.45), 0 0 16px rgba(0, 240, 255, 0.95);
+}
+
+input[type="range"].slider-holo::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00f0ff;
+  border: 2px solid #f8fafc;
+  box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.25), 0 0 12px rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.25), 0 0 12px rgba(0, 240, 255, 0.6);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: haloPulse 3s ease-in-out infinite;
+}
+
+input[type="range"].slider-holo::-moz-range-thumb:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 8px rgba(139, 92, 246, 0.4), 0 0 18px rgba(0, 240, 255, 0.9);
+  box-shadow: 0 0 0 7px rgba(139, 92, 246, 0.45), 0 0 16px rgba(0, 240, 255, 0.95);
+}
+
+input[type="range"].slider-holo:focus-visible {
+  outline: 1px solid var(--ion-cyan);
+  outline-offset: 4px;
+}
+
+/* Ghost Input Styling */
+.ghost-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--glow-line);
+  border-radius: 0;
+  padding: 8px 12px;
+  padding: 6px 10px;
+  color: var(--starlight);
+  font-family: 'Space Grotesk', sans-serif;
+  transition: border 0.25s ease, box-shadow 0.25s ease, border-radius 0.25s ease;
+}
+
+.ghost-input:focus {
+  outline: none;
+  border: 1px solid var(--ion-cyan);
+  border-radius: 8px;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.25);
+}
+
+/* Materialize Scroll Reveal Animation */
+.reveal-on-scroll {
+  opacity: 0;
+  filter: blur(10px);
+  transform: scale(0.95);
+  transform: scale(0.96);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, filter, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  filter: blur(0px);
+  transform: scale(1.0);
+}
+
+/* Diagonal Striped Caution Border for Research Gap / Uncertainty */
+/* Diagonal Striped Caution Border */
+.caution-striped-border {
+  border: 1px dashed rgba(148, 163, 184, 0.4);
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(148, 163, 184, 0.05),
+    rgba(148, 163, 184, 0.05) 8px,
+    rgba(2, 2, 5, 0.8) 8px,
+    rgba(2, 2, 5, 0.8) 16px
+  );
+}
+
+/* Holographic Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020205;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.2);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .levitate-float, .levitate-delay-1, .levitate-delay-2, .levitate-delay-3 {
+    animation: none !important;
+    transform: none !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
