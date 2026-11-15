@@ -8,11 +8,9 @@
   --nebula: #94a3b8;
   --ion-cyan: #00f0ff;
   --antimatter-violet: #8b5cf6;
-  --glass: rgba(255, 255, 255, 0.03);
-  --glow-line: rgba(0, 240, 255, 0.15);
   --glass: rgba(0, 0, 0, 0.4);
   --glow-line: rgba(0, 240, 255, 0.2);
-  
+
   --safe: #00eaa6;
   --marginal: #fbbf24;
   --danger: #ff0055;
@@ -23,7 +21,6 @@
   --mute: #94a3b8;
   --ember: #00f0ff;
   --amber: #8b5cf6;
-  --line: rgba(0, 240, 255, 0.15);
   --line: rgba(0, 240, 255, 0.2);
 
   color-scheme: dark;
@@ -31,28 +28,27 @@
 
 @keyframes voidShift {
   0%, 100% {
-    background-position: 90% 10%, 10% 90%;
+    background-position: 90% 10%, 10% 90%, 90% 90%;
   }
   50% {
-    background-position: 70% 30%, 30% 70%;
+    background-position: 70% 30%, 30% 70%, 70% 70%;
   }
 }
 
 body {
   background-color: var(--void);
-  background-image: 
+  background-image:
     radial-gradient(circle at 85% 15%, rgba(10, 15, 26, 0.85), transparent 55%),
-    radial-gradient(circle at 15% 80%, rgba(139, 92, 246, 0.04), transparent 50%);
-    radial-gradient(circle at 15% 80%, rgba(139, 92, 246, 0.05), transparent 50%);
+    radial-gradient(circle at 15% 80%, rgba(139, 92, 246, 0.04), transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(139, 92, 246, 0.05), transparent 50%);
   background-attachment: fixed;
-  background-size: 100% 100%, 100% 100%;
+  background-size: 100% 100%, 100% 100%, 100% 100%;
   animation: voidShift 24s ease-in-out infinite;
   color: var(--starlight);
   font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   font-size: 14px;
-  line-height: 1.7;
-  letter-spacing: -0.01em;
   line-height: 1.6;
+  letter-spacing: -0.01em;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -70,22 +66,28 @@ h2, .font-telemetry-h2 {
   font-family: 'JetBrains Mono', monospace;
   font-size: clamp(28px, 4vw, 56px);
   line-height: 1.1;
-/* Headings in Space Grotesk */
-h1, h2, h3, h4, .font-heading {
-  font-family: 'Space Grotesk', sans-serif;
   letter-spacing: -0.02em;
   font-weight: 500;
-  font-weight: 600;
 }
 
 h3, .font-telemetry-h3 {
-/* Telemetry & Numerical Data in JetBrains Mono */
-.font-telemetry, .font-mono, .telemetry-readout {
   font-family: 'JetBrains Mono', monospace;
   font-size: clamp(20px, 3vw, 32px);
   line-height: 1.15;
   letter-spacing: -0.01em;
   font-weight: 500;
+}
+
+/* Headings in Space Grotesk */
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+/* Telemetry & Numerical Data in JetBrains Mono */
+.font-telemetry, .font-mono, .telemetry-readout {
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* Section Header HUD Micro-labels */
@@ -98,16 +100,13 @@ h3, .font-telemetry-h3 {
   color: var(--nebula);
 }
 
-/* Anti-Gravity Holographic Panels */
 /* Anti-Gravity Holographic Bento Panels */
 .anti-gravity-panel {
-  background: var(--glass);
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glow-line);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.05);
   box-shadow: 0 8px 32px rgba(0, 240, 255, 0.06);
   transition: border-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
@@ -115,14 +114,11 @@ h3, .font-telemetry-h3 {
 .anti-gravity-panel:hover {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-color: rgba(0, 240, 255, 0.35);
-  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.12);
   border-color: rgba(0, 240, 255, 0.4);
   box-shadow: 0 8px 32px rgba(0, 240, 255, 0.14);
 }
 
 /* Continuous Subtle Levitation */
-/* Continuous Subtle Levitation (@keyframes levitate) */
 @keyframes levitate {
   0%, 100% {
     transform: translateY(0px);
@@ -154,11 +150,9 @@ h3, .font-telemetry-h3 {
 /* Glowing Telemetry Readouts */
 .telemetry-readout {
   font-family: 'JetBrains Mono', monospace;
-  text-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
   text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
 }
 
-/* Antigravity 1px Glowing Track Slider with Halo Thumb */
 /* 1px Glowing Track Slider with Halo Thumb */
 input[type="range"].slider-holo {
   -webkit-appearance: none;
@@ -167,7 +161,6 @@ input[type="range"].slider-holo {
   height: 1px;
   background: linear-gradient(90deg, #00f0ff 0%, #8b5cf6 100%);
   outline: none;
-  margin: 16px 0;
   margin: 14px 0;
   cursor: pointer;
   position: relative;
@@ -175,11 +168,9 @@ input[type="range"].slider-holo {
 
 @keyframes haloPulse {
   0%, 100% {
-    box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.2), 0 0 12px rgba(0, 240, 255, 0.6);
     box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.2), 0 0 10px rgba(0, 240, 255, 0.6);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(139, 92, 246, 0.35), 0 0 20px rgba(0, 240, 255, 0.8);
     box-shadow: 0 0 0 9px rgba(139, 92, 246, 0.35), 0 0 18px rgba(0, 240, 255, 0.85);
   }
 }
@@ -192,7 +183,6 @@ input[type="range"].slider-holo::-webkit-slider-thumb {
   border-radius: 50%;
   background: #00f0ff;
   border: 2px solid #f8fafc;
-  box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.25), 0 0 12px rgba(0, 240, 255, 0.6);
   box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.25), 0 0 12px rgba(0, 240, 255, 0.6);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -201,7 +191,6 @@ input[type="range"].slider-holo::-webkit-slider-thumb {
 
 input[type="range"].slider-holo::-webkit-slider-thumb:hover {
   transform: scale(1.3);
-  box-shadow: 0 0 0 8px rgba(139, 92, 246, 0.4), 0 0 18px rgba(0, 240, 255, 0.9);
   box-shadow: 0 0 0 7px rgba(139, 92, 246, 0.45), 0 0 16px rgba(0, 240, 255, 0.95);
 }
 
@@ -211,7 +200,6 @@ input[type="range"].slider-holo::-moz-range-thumb {
   border-radius: 50%;
   background: #00f0ff;
   border: 2px solid #f8fafc;
-  box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.25), 0 0 12px rgba(0, 240, 255, 0.6);
   box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.25), 0 0 12px rgba(0, 240, 255, 0.6);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -220,7 +208,6 @@ input[type="range"].slider-holo::-moz-range-thumb {
 
 input[type="range"].slider-holo::-moz-range-thumb:hover {
   transform: scale(1.3);
-  box-shadow: 0 0 0 8px rgba(139, 92, 246, 0.4), 0 0 18px rgba(0, 240, 255, 0.9);
   box-shadow: 0 0 0 7px rgba(139, 92, 246, 0.45), 0 0 16px rgba(0, 240, 255, 0.95);
 }
 
@@ -235,7 +222,6 @@ input[type="range"].slider-holo:focus-visible {
   border: none;
   border-bottom: 1px solid var(--glow-line);
   border-radius: 0;
-  padding: 8px 12px;
   padding: 6px 10px;
   color: var(--starlight);
   font-family: 'Space Grotesk', sans-serif;
@@ -253,10 +239,9 @@ input[type="range"].slider-holo:focus-visible {
 .reveal-on-scroll {
   opacity: 0;
   filter: blur(10px);
-  transform: scale(0.95);
   transform: scale(0.96);
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
-              filter 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1.2s cubic-bezier(0.16, 1, 0.3, 1),
               transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, filter, transform;
 }
@@ -267,7 +252,6 @@ input[type="range"].slider-holo:focus-visible {
   transform: scale(1.0);
 }
 
-/* Diagonal Striped Caution Border for Research Gap / Uncertainty */
 /* Diagonal Striped Caution Border */
 .caution-striped-border {
   border: 1px dashed rgba(148, 163, 184, 0.4);
